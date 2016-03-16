@@ -27,6 +27,13 @@ char MyString::operator [](int i)
 {
 	return chars[i];
 }
+/*char MyString::operator =(MyString& rhs)
+{
+	for (int i = 1; i < Length(chars); i++)
+	{
+		chars[i] = rhs.chars[i];
+	}
+}	 //FIX!*/
 
 int MyString::Length(const char* string)
 {
@@ -111,6 +118,57 @@ void MyString::Prepend(const MyString& rhs)
 	delete[] chars;
 	chars = temp;
 	sLength = newLength;
+}
+void MyString::Uppercase()
+{
+	for (int i = 0; i < getSize(); i++)
+	{
+		if (chars[i] >= 'a' && chars[i] <= 'z')
+		{
+			chars[i] = ((chars[i] + 'A') - 'a');
+		}
+	}
+}
+void MyString::Lowercase()
+{
+	for (int i = 0; i < getSize(); i++)
+	{
+		if (chars[i] >= 'A' && chars[i] <= 'Z')
+		{
+			chars[i] = ((chars[i] + 'a') - 'A');
+		}
+	}
+}
+int MyString::Find(char c[])
+{
+	int index = 0, i = 0, position = -1;
+	bool found = false;
+	while (i < getSize() && found == false)
+	{
+		if (chars[i] == c[index])
+		{
+			while (c[index] != '\0')
+			{
+				if (!(chars[i + index] == c[index]))
+				{
+					index = 0;
+					found = false;
+					break;
+				}
+				else
+				{
+					position = i;
+					index++;
+					found = true;
+				}
+			}
+		}
+	}
+	return position;
+}
+int MyString::Find(char c[], int i)
+{
+	return 0;
 }
 
 int MyString::getSize()
