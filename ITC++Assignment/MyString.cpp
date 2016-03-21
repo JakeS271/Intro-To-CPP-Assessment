@@ -3,20 +3,20 @@
 
 MyString::MyString()
 {
-	sLength = 1;
-	chars = new char[sLength];
-	chars[0] = '\0';
+	m_sLength = 1;
+	m_chars = new char[m_sLength];
+	m_chars[0] = '\0';
 }
 MyString::MyString(const char* string)
 {
-	sLength = Length(string);
-	chars = new char[sLength + 1];
+	m_sLength = Length(string);
+	m_chars = new char[m_sLength + 1];
 
-	for (int i = 0; i < sLength; i++)
+	for (int i = 0; i < m_sLength; i++)
 	{
-		chars[i] = string[i];
+		m_chars[i] = string[i];
 	}
-	chars[sLength] = '\0';
+	m_chars[m_sLength] = '\0';
 }
 MyString::~MyString()
 {
@@ -24,25 +24,25 @@ MyString::~MyString()
 
 char MyString::operator [](int i)
 {
-	return chars[i];
+	return m_chars[i];
 }
 void MyString::operator =(MyString& rhs)
 {
-	int l = Length(chars);
+	int l = Length(m_chars);
 	for (int i = 0; i < l; i++)
 	{
-		chars[i] = rhs.chars[i];
+		m_chars[i] = rhs.m_chars[i];
 	}
-	chars[l] = '\0';
+	m_chars[l] = '\0';
 }	
 void MyString::operator =(char* rhs)
 {
 	int l = Length(rhs);
 	for (int i = 0; i < l; i++)
 	{
-		chars[i] = rhs[i];
+		m_chars[i] = rhs[i];
 	}
-	chars[l] = '\0';
+	m_chars[l] = '\0';
 }
 
 int MyString::Length(const char* string)
@@ -60,7 +60,7 @@ int MyString::Length()
 {
 	int counter = 0;
 
-	while (chars[counter] != '\0')
+	while (m_chars[counter] != '\0')
 	{
 		counter++;
 	}
@@ -71,9 +71,9 @@ int MyString::Compare(const MyString& rhs)
 {
 	for (int i = 0; i < Length(); i++)
 	{
-		if (chars[i] != rhs.chars[i])
+		if (m_chars[i] != rhs.m_chars[i])
 		{
-			if (chars[i] > rhs.chars[i])
+			if (m_chars[i] > rhs.m_chars[i])
 			{
 				return 1;
 			}
@@ -87,55 +87,55 @@ int MyString::Compare(const MyString& rhs)
 }
 void MyString::Append(const MyString& rhs)
 {
-	int newLength = Length() + Length(rhs.chars) + 1;
+	int newLength = Length() + Length(rhs.m_chars) + 1;
 	char* temp = new char[newLength + 1];
 	
 	for (int i = 0; i < Length(); i++)
 	{
-		temp[i] = chars[i];
+		temp[i] = m_chars[i];
 	}
 
 	int index = 0;
 	for (int i = Length(); i < newLength; i++)
 	{
-		temp[i] = rhs.chars[index];
+		temp[i] = rhs.m_chars[index];
 		index++;
 	}
 
 	temp[newLength] = '\0';
-	delete[] chars;
-	chars = temp;
-	sLength = newLength;
+	delete[] m_chars;
+	m_chars = temp;
+	m_sLength = newLength;
 }
 void MyString::Prepend(const MyString& rhs)
 {
-	int newLength = Length() + Length(rhs.chars) + 1;
+	int newLength = Length() + Length(rhs.m_chars) + 1;
 	char* temp = new char[newLength + 1];
 
-	for (int i = 0; i < Length(rhs.chars); i++)
+	for (int i = 0; i < Length(rhs.m_chars); i++)
 	{
-		temp[i] = rhs.chars[i];
+		temp[i] = rhs.m_chars[i];
 	}
 
 	int index = 0;
-	for (int i = Length(rhs.chars); i < newLength; i++)
+	for (int i = Length(rhs.m_chars); i < newLength; i++)
 	{
-		temp[i] = chars[index];
+		temp[i] = m_chars[index];
 		index++;
 	}
 
 	temp[newLength] = '\0';
-	delete[] chars;
-	chars = temp;
-	sLength = newLength;
+	delete[] m_chars;
+	m_chars = temp;
+	m_sLength = newLength;
 }
 void MyString::Uppercase()
 {
 	for (int i = 0; i < getSize(); i++)
 	{
-		if (chars[i] >= 'a' && chars[i] <= 'z')
+		if (m_chars[i] >= 'a' && m_chars[i] <= 'z')
 		{
-			chars[i] = ((chars[i] + 'A') - 'a');
+			m_chars[i] = ((m_chars[i] + 'A') - 'a');
 		}
 	}
 }
@@ -143,9 +143,9 @@ void MyString::Lowercase()
 {
 	for (int i = 0; i < getSize(); i++)
 	{
-		if (chars[i] >= 'A' && chars[i] <= 'Z')
+		if (m_chars[i] >= 'A' && m_chars[i] <= 'Z')
 		{
-			chars[i] = ((chars[i] + 'a') - 'A');
+			m_chars[i] = ((m_chars[i] + 'a') - 'A');
 		}
 	}
 }
@@ -155,11 +155,11 @@ int MyString::Find(char c[])
 	bool found = false;
 	while (i < getSize() && found == false)
 	{
-		if (chars[i] == c[index])
+		if (m_chars[i] == c[index])
 		{
 			while (c[index] != '\0')
 			{
-				if (!(chars[i + index] == c[index]))
+				if (!(m_chars[i + index] == c[index]))
 				{
 					position = -1;
 					index = 0;
@@ -184,11 +184,11 @@ int MyString::Find(char c[], int i)
 	bool found = false;
 	while (i < getSize() && found == false)
 	{
-		if (chars[i] == c[index])
+		if (m_chars[i] == c[index])
 		{
 			while (c[index] != '\0')
 			{
-				if (!(chars[i + index] == c[index]))
+				if (!(m_chars[i + index] == c[index]))
 				{
 					position = -1;
 					index = 0;
@@ -215,7 +215,7 @@ void MyString::Replace(char subString[], int pos, int length)
 	
 	for (int i = 0; i < pos; i++)
 	{
-		temp[i] = chars[i];
+		temp[i] = m_chars[i];
 	}
 	int length2 = (pos + Length(subString));
 	for (int i = pos; i < length2; i++)
@@ -224,26 +224,26 @@ void MyString::Replace(char subString[], int pos, int length)
 		index++;
 	}
 	i = length2;
-	while(chars[i] < totalLength)
+	while(m_chars[i] < totalLength)
 	{
-		temp[i] = chars[i];
+		temp[i] = m_chars[i];
 		i++;
 	}
 
 	temp[totalLength] = '\0';
-	delete[] chars;
-	chars = temp;
-	sLength = length2;
+	delete[] m_chars;
+	m_chars = temp;
+	m_sLength = length2;
 
 }
 char* MyString::toChar()
 {
-	int l = Length(chars);
+	int l = Length(m_chars);
 	char* newChar = new char[l];
 	
 	for (int i = 0; i < l; i++)
 	{
-		newChar[i] = chars[i];
+		newChar[i] = m_chars[i];
 	}
 	newChar[l] = '\0';
 	return newChar;
@@ -251,13 +251,13 @@ char* MyString::toChar()
 
 int MyString::getSize()
 {
-	return sLength;
+	return m_sLength;
 }
 void MyString::print()
 {
-	for (int i = 0; i < sLength; i++)
+	for (int i = 0; i < m_sLength; i++)
 	{
-		std::cout << chars[i];
+		std::cout << m_chars[i];
 	}
 	std::cout << "\n";
 }

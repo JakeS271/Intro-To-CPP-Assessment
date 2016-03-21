@@ -2,8 +2,8 @@
 class MyString
 {
 private:
-	char* chars;
-	int sLength = 0;
+	char* m_chars;
+	int m_sLength = 0;
 
 public:
 	MyString();
