@@ -1,41 +1,204 @@
 #include <iostream>
 #include "MyString.h"
-//DO COPY CONSTRUCTOR!
-//Do equals operator for converting from MyString to char array.
+#include <fstream>
+
+void writeToFile();
+
 int main()
 {
 	MyString string1("Jake");
 	MyString string2("Jack");
-	char char1[30];
-	string1.print();
+	char name[]{ "Sam" };
+	int testCount = 1, successCount = 0;
+	std::fstream TestFile;
 
-	//MyString string3 = string1;
-	//std::cout << string3[0] << std::endl;
+	TestFile.open("TestFile.txt", std::ios::out, std::ios::app);
 
-	std::cout << string1.Length() << "\n";
-	std::cout << string1.Compare(string2) << "\n";
-	std::cout << string2.Compare(string1) << "\n";
-	std::cout << string1.Compare(string1) << "\n";
+	if (TestFile.is_open() == true)
+	{
+		std::cout << "Test " << testCount << "\tLength\t\t ";
+		TestFile << "Test " << testCount << "\tLength\t\t ";
+		if (string1.Length() == 4)
+		{
+			std::cout << "Successful\n";
+			TestFile << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+			TestFile << "Failed\n";
+		}
 
-	string1.Append(string2);
-	string1.print();
+		testCount++;
+		std::cout << "Test " << testCount << "\tAccess Char\t ";
+		if (string1[0] == 'J')
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
 
-	string1.Prepend(string2);
-	string1.print();
+		testCount++;
+		std::cout << "Test " << testCount << "\tCompare\t\t ";
+		if (string1.Compare(string1) == 0)
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
 
-	string1.Uppercase();
-	string1.print();
+		testCount++;
+		std::cout << "Test " << testCount << "\tAppend\t\t ";
+		string1.Append(string2);
+		if (string1.Length() == 8)
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
 
-	string1.Lowercase();
-	string1.print();
+		testCount++;
+		std::cout << "Test " << testCount << "\tPrepend\t\t ";
+		string1.Prepend(string2);
+		if (string1.Length() == 12)
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
 
-	std::cout << string1.Find("jake") << std::endl;
-	std::cout << string1.Find("jess") << std::endl;
+		testCount++;
+		std::cout << "Test " << testCount << "\tToChar\t\t ";
+		char* newChar = string1.toChar();
+		if (newChar[0] == string1[0])
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
 
+		testCount++;
+		string1.Uppercase();
+		std::cout << "Test " << testCount << "\tUppercase\t ";
+		if (string1[0] >= 'A' && string1[0] <= 'Z')
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
 
-	//char1 = string1;
+		testCount++;
+		string1.Lowercase();
+		std::cout << "Test " << testCount << "\tLowercase\t ";
+		if (string1[0] >= 'a' && string1[0] <= 'z')
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
+
+		testCount++;
+		int index = string1.Find("jake");
+		std::cout << "Test " << testCount << "\tFind\t\t ";
+		if (index == 4)
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
+
+		testCount++;
+		index = string1.Find("jack", 4);
+		std::cout << "Test " << testCount << "\tFind Index\t ";
+		if (index == 8)
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
+
+		testCount++;
+		int pos = string1.Find("jack", 3), l = string1.Length();
+		string1.Replace(name, pos, l);
+		std::cout << "Test " << testCount << "\tReplace\t\t ";
+		if (string1[pos] == name[0])
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
+
+		testCount++;
+		MyString string3 = name;
+		std::cout << "Test " << testCount << "\tSet String\t ";
+		if (string3[0] == name[0])
+		{
+			std::cout << "Successful\n";
+			successCount++;
+		}
+		else
+		{
+			std::cout << "Failed\n";
+		}
+
+		std::cout << "\nSucessful " << (successCount / testCount) * 100 << "%\n";
+	}
+	else
+	{
+		std::cout << "Error! Cannot write to file.\n";
+	}
+	
+
+	
+	
 
 	system("PAUSE");
     return 0;
 }
 
+void writeToFile()
+{
+	std::fstream TestFile;
+
+	TestFile.open("TestFile.txt", std::ios::out, std::ios::app);
+
+	if (TestFile.is_open())
+	{
+		//TestFile << 
+	}
+	else
+	{
+		std::cout << "Error! Cannot write to file.\n";
+	}
+}

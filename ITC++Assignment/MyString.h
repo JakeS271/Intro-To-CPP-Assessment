@@ -11,7 +11,8 @@ public:
 	~MyString();
 
 	char operator [](int i);
-	//char operator =(MyString& rhs);	//FIX!
+	void operator =(MyString& rhs);	
+	void operator =(char* rhs);
 
 	int Length(const char* string);
 	int Length();
@@ -22,6 +23,8 @@ public:
 	void Lowercase();
 	int Find(char c[]);
 	int Find(char c[], int i);
+	void Replace(char subString[], int pos, int length);
+	char* toChar();
 
 	int getSize();
 	void print();

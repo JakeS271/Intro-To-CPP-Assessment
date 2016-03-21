@@ -20,20 +20,30 @@ MyString::MyString(const char* string)
 }
 MyString::~MyString()
 {
-	delete[] chars;
 }
 
 char MyString::operator [](int i)
 {
 	return chars[i];
 }
-/*char MyString::operator =(MyString& rhs)
+void MyString::operator =(MyString& rhs)
 {
-	for (int i = 1; i < Length(chars); i++)
+	int l = Length(chars);
+	for (int i = 0; i < l; i++)
 	{
 		chars[i] = rhs.chars[i];
 	}
-}	 //FIX!*/
+	chars[l] = '\0';
+}	
+void MyString::operator =(char* rhs)
+{
+	int l = Length(rhs);
+	for (int i = 0; i < l; i++)
+	{
+		chars[i] = rhs[i];
+	}
+	chars[l] = '\0';
+}
 
 int MyString::Length(const char* string)
 {
@@ -151,6 +161,7 @@ int MyString::Find(char c[])
 			{
 				if (!(chars[i + index] == c[index]))
 				{
+					position = -1;
 					index = 0;
 					found = false;
 					break;
@@ -163,12 +174,79 @@ int MyString::Find(char c[])
 				}
 			}
 		}
+		i++;
 	}
 	return position;
 }
 int MyString::Find(char c[], int i)
 {
-	return 0;
+	int index = 0, position = -1;
+	bool found = false;
+	while (i < getSize() && found == false)
+	{
+		if (chars[i] == c[index])
+		{
+			while (c[index] != '\0')
+			{
+				if (!(chars[i + index] == c[index]))
+				{
+					position = -1;
+					index = 0;
+					found = false;
+					break;
+				}
+				else
+				{
+					position = i;
+					index++;
+					found = true;
+				}
+			}
+		}
+		i++;
+	}
+	return position;
+}
+void MyString::Replace(char subString[], int pos, int length)
+{
+	int i, index = 0;
+	int totalLength = length + Length(subString);
+	char* temp = new char[totalLength];
+	
+	for (int i = 0; i < pos; i++)
+	{
+		temp[i] = chars[i];
+	}
+	int length2 = (pos + Length(subString));
+	for (int i = pos; i < length2; i++)
+	{
+		temp[i] = subString[index];
+		index++;
+	}
+	i = length2;
+	while(chars[i] < totalLength)
+	{
+		temp[i] = chars[i];
+		i++;
+	}
+
+	temp[totalLength] = '\0';
+	delete[] chars;
+	chars = temp;
+	sLength = length2;
+
+}
+char* MyString::toChar()
+{
+	int l = Length(chars);
+	char* newChar = new char[l];
+	
+	for (int i = 0; i < l; i++)
+	{
+		newChar[i] = chars[i];
+	}
+	newChar[l] = '\0';
+	return newChar;
 }
 
 int MyString::getSize()
