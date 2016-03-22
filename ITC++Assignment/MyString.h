@@ -14,6 +14,7 @@ public:
 	void operator =(MyString& rhs);	
 	void operator =(char* rhs);
 
+
 	int Length(const char* string);
 	int Length();
 	int Compare(const MyString& rhs);

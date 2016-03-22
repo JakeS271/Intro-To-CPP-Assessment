@@ -1,0 +1,270 @@
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+
+Test 1	Length		 Successful
+Test 2	Access Char	 Successful
+Test 3	Compare		 Successful
+Test 4	Append		 Successful
+Test 5	Prepend		 Successful
+Test 6	ToChar		 Successful
+Test 7	Uppercase	 Successful
+Test 8	Lowercase	 Successful
+Test 9	Find		 Successful
+Test 10	Find Index	 Successful
+Test 11	Replace		 Successful
+Test 12	Set String	 Successful
+
+Successful 100%
+

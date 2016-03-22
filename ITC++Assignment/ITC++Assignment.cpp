@@ -2,8 +2,9 @@
 #include "MyString.h"
 #include <fstream>
 #include <string>
+#include "Game.h"
 
-int TestOutcome(bool outcome, int successCount, int testCounter, char* c);
+double TestOutcome(bool outcome, double successCount, double testCounter, char* c);
 
 int main()
 {
@@ -89,10 +90,12 @@ int main()
 	}
 	
 	system("PAUSE");
+	Game game;
+	game.start();
     return 0;
 }
 
-int TestOutcome(bool outcome, int successCount, int testCount, char* c)
+double TestOutcome(bool outcome, double successCount, double testCount, char* c)
 {
 	std::fstream TestFile;
 	
@@ -107,6 +110,7 @@ int TestOutcome(bool outcome, int successCount, int testCount, char* c)
 			std::cout << "Successful\n";
 			TestFile << "Successful\n";
 			successCount++;
+			return successCount;
 		}
 		else
 		{
@@ -119,6 +123,7 @@ int TestOutcome(bool outcome, int successCount, int testCount, char* c)
 	else
 	{
 		std::cout << "Error! Cannot write to file.\n";
+		return 0;
 	}
-	
+	return 0;
 }
