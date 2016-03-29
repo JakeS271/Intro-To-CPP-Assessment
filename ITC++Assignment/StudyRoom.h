@@ -1,15 +1,15 @@
 #pragma once
 #include "Room.h"
-class PuzzleRoom :
+class StudyRoom :
 	public Room
 {
 public:
-	PuzzleRoom();
-	~PuzzleRoom();
+	StudyRoom();
+	~StudyRoom();
 
 	void Update(MyString command);
 
 protected:
-	bool keyAval = false;
+	bool lampOn = false;
 };
 

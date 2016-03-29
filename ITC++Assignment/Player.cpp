@@ -4,14 +4,14 @@
 
 Player::Player()
 {
-	health = 100;
-	damage = 20;
+	m_health = 100;
+	m_damage = 20;
 }
 
 Player::Player(int h, int d)
 {
-	health = h;
-	damage = d;
+	m_health = h;
+	m_damage = d;
 }
 
 Player::~Player()

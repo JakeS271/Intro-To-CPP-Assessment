@@ -7,6 +7,10 @@ public:
 	~StartRoom();
 
 	void Update(MyString command);
+
 protected:
+	char c[256];
+	bool rugMoved = false, openTrapDoor = false;
+	
 };
 

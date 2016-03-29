@@ -4,14 +4,14 @@
 
 Creature::Creature()
 {
-	health = 50;
-	damage = 25;
+	m_health = 100;
+	m_damage = 25;
 }
 
 Creature::Creature(int h, int d)
 {
-	health = h;
-	damage = d;
+	m_health = h;
+	m_damage = d;
 }
 
 Creature::~Creature()

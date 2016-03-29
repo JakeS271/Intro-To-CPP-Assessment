@@ -18,6 +18,12 @@ MyString::MyString(const char* string)
 	}
 	m_chars[m_sLength] = '\0';
 }
+
+MyString::MyString(const MyString& string) : MyString(string.m_chars)
+{
+
+}
+
 MyString::~MyString()
 {
 }
@@ -28,7 +34,7 @@ char MyString::operator [](int i)
 }
 void MyString::operator =(MyString& rhs)
 {
-	int l = Length(m_chars);
+	int l = Length(rhs.m_chars);
 	for (int i = 0; i < l; i++)
 	{
 		m_chars[i] = rhs.m_chars[i];
@@ -43,6 +49,19 @@ void MyString::operator =(char* rhs)
 		m_chars[i] = rhs[i];
 	}
 	m_chars[l] = '\0';
+}
+
+bool MyString::operator ==(char* rhs)
+{
+	int l = Length(rhs);
+	for (int i = 0; i < l; i++)
+	{
+		if (m_chars[i] != rhs[i])
+		{
+			return false;
+		}
+	}
+	return true;
 }
 
 int MyString::Length(const char* string)

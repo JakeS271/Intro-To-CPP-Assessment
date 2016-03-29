@@ -1,15 +1,12 @@
 #pragma once
 #include "Room.h"
-class PuzzleRoom :
+class ExitRoom :
 	public Room
 {
 public:
-	PuzzleRoom();
-	~PuzzleRoom();
+	ExitRoom();
+	~ExitRoom();
 
 	void Update(MyString command);
-
-protected:
-	bool keyAval = false;
 };
 
