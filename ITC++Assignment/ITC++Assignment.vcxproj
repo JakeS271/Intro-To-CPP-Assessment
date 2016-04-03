@@ -146,33 +146,28 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
-    <ClInclude Include="Creature.h" />
-    <ClInclude Include="Demon.h" />
+    <ClInclude Include="endRoom.h" />
     <ClInclude Include="ExitRoom.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="lockRoom.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="PuzzleRoom.h" />
+    <ClInclude Include="puzzleRoom.h" />
     <ClInclude Include="Room.h" />
-    <ClInclude Include="StartRoom.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="StudyRoom.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
-    <ClCompile Include="Creature.cpp" />
-    <ClCompile Include="Demon.cpp" />
-    <ClCompile Include="ExitRoom.cpp" />
+    <ClCompile Include="endRoom.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ITC++Assignment.cpp" />
+    <ClCompile Include="lockRoom.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="PuzzleRoom.cpp" />
+    <ClCompile Include="puzzleRoom.cpp" />
     <ClCompile Include="Room.cpp" />
-    <ClCompile Include="StartRoom.cpp" />
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="StudyRoom.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

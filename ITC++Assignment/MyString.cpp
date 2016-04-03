@@ -51,6 +51,19 @@ void MyString::operator =(char* rhs)
 	m_chars[l] = '\0';
 }
 
+bool MyString::operator ==(MyString& rhs)
+{
+	int l = Length();
+	for (int i = 0; i < l; i++)
+	{
+		if (m_chars[i] != rhs[i])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
 bool MyString::operator ==(char* rhs)
 {
 	int l = Length(rhs);
@@ -179,6 +192,35 @@ int MyString::Find(char c[])
 			while (c[index] != '\0')
 			{
 				if (!(m_chars[i + index] == c[index]))
+				{
+					position = -1;
+					index = 0;
+					found = false;
+					break;
+				}
+				else
+				{
+					position = i;
+					index++;
+					found = true;
+				}
+			}
+		}
+		i++;
+	}
+	return position;
+}
+int MyString::Find(MyString& string)
+{
+	int index = 0, i = 0, position = -1;
+	bool found = false;
+	while (i < getSize() && found == false)
+	{
+		if (m_chars[i] == string[index])
+		{
+			while (string[index] != '\0')
+			{
+				if (!(m_chars[i + index] == string[index]))
 				{
 					position = -1;
 					index = 0;

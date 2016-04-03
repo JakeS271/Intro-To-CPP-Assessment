@@ -10,11 +10,45 @@ Room::~Room()
 {
 }
 
-void Room::roomDescrip()
+void Room::descriptPrint()
 {
-	descript.print();
+	m_roomDescript.print();
 }
 
-void Room::Update(MyString command)
+void Room::roomDescrip(MyString descript)
 {
+	m_roomDescript = descript;
+}
+
+void Room::Update(MyString& command)
+{
+	command.Lowercase();
+	for (int i = 0; i < m_itemCount; i++)
+	{
+		if (command.Find(itemList[i].itemName) && command.Find("examine"))
+		{
+			itemList[i].descript.print();
+			return;
+		}
+
+		else if (command.Find(directionList[i].direction) && command.Find("go"))
+		{
+			location = directionList[i].location;
+			return;
+		}
+	}
+
+	std::cout << "Error! Invalid input\n\n";
+
+}
+
+void Room::setDirections(MyString direction, MyString location)
+{
+	directionList.push_back(roomDirections(direction, location));
+}
+
+void Room::setRoomItems(MyString iName, MyString description, bool pUAble)
+{
+	itemList.push_back(roomItems(iName, description, pUAble, 1));
+	m_itemCount++;
 }

@@ -4,13 +4,13 @@
 
 Player::Player()
 {
-	m_health = 100;
+	m_MaxHealth = 100;
 	m_damage = 20;
 }
 
 Player::Player(int h, int d)
 {
-	m_health = h;
+	m_MaxHealth = h;
 	m_damage = d;
 }
 

@@ -5,5 +5,7 @@ class Demon : public Creature
 public:
 	Demon();
 	~Demon();
+
+	void kamikaze();
 };
 

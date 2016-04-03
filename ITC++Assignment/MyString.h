@@ -14,6 +14,7 @@ public:
 	char operator [](int i);								//Overloads the [] operator to return a specific value in an array.
 	void operator =(MyString& rhs);							//Overloads the = operator so that MyString can equal another MyString.
 	void operator =(char* rhs);								//Overloads the = operator so that MyString can equal a char array.
+	bool operator ==(MyString& rhs);						//Overloads the == operator so that MyString can be compared against a MyString.
 	bool operator ==(char* rhs);							//Overloads the == operator so that MyString can be compared against a char array.
 
 
@@ -25,6 +26,7 @@ public:
 	void Uppercase();										//Converts MyString to uppercase.
 	void Lowercase();										//Converts MyString to lowercase.
 	int Find(char c[]);										//Finds a substring.
+	int Find(MyString& string);								//Finds a substring from a MyString.
 	int Find(char c[], int i);								//Finds a substring from a certain index.
 	void Replace(char subString[], int pos, int length);	//Replaces a substring with another string.
 	char* toChar();											//Returns MyString as a char.

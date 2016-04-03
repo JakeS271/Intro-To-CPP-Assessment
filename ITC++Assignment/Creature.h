@@ -6,5 +6,7 @@ public:
 	Creature();
 	Creature(int h, int d);
 	~Creature();
+
+	void Enrage();
 };
 

@@ -1,15 +1,26 @@
 #pragma once
-#include "Room.h"
-class PuzzleRoom :
-	public Room
+#include "lockRoom.h"
+class puzzleRoom :
+	public lockRoom
 {
 public:
-	PuzzleRoom();
-	~PuzzleRoom();
+	puzzleRoom();
+	~puzzleRoom();
 
-	void Update(MyString command);
+	void puzzleAnswer(MyString& command);
+	void setAnswer(MyString answer, MyString item, MyString output);
+	void Update(MyString& command);
 
 protected:
-	bool keyAval = false;
+
+	struct passwordItem
+	{
+		MyString password;
+		MyString item;
+		MyString output;
+
+		passwordItem(MyString p, MyString i, MyString o) : password(p), item(i), output(o) {}
+	};
+	std::vector<passwordItem> pItems;
 };
 
