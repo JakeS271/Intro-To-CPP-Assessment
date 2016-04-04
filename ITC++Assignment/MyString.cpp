@@ -316,7 +316,7 @@ int MyString::getSize()
 }
 void MyString::print()
 {
-	for (int i = 0; i < m_sLength; i++)
+	for (int i = 0; i < Length(); i++)
 	{
 		std::cout << m_chars[i];
 	}

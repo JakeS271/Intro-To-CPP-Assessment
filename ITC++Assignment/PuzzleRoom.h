@@ -1,7 +1,6 @@
 #pragma once
 #include "lockRoom.h"
-class puzzleRoom :
-	public lockRoom
+class puzzleRoom : public lockRoom
 {
 public:
 	puzzleRoom();

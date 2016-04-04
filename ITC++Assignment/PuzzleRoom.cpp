@@ -20,6 +20,9 @@ void puzzleRoom::puzzleAnswer(MyString& command)
 		if (command.Find(pItems[i].password))
 		{
 			pItems[i].output.print();
+
+			player AddToInventory(pItems[i].item, 1);
+
 			Player::Inv.name = pItems[i].item;
 			Player::Inv.quantity = 1;
 		}
@@ -37,13 +40,13 @@ void puzzleRoom::Update(MyString& command)
 	command.Lowercase();
 	for (int i = 0; i < m_itemCount; i++)
 	{
-		if (command.Find(itemList[i].itemName) && command.Find("examine"))
+		if (command.Find(itemList[i].itemName) >= 0 && command.Find("examine") >= 0)
 		{
 			itemList[i].descript.print();
 			return;
 		}
 
-		else if (command.Find(directionList[i].direction) && command.Find("go"))
+		else if (command.Find(directionList[i].direction) >= 0 && command.Find("go")>= 0)
 		{
 			location = directionList[i].location;
 			return;

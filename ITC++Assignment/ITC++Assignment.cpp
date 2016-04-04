@@ -89,6 +89,10 @@ int main()
 		TestFile.close();
 	}
 	
+	/*delete[] &string1;
+	delete[] &string2;
+	delete[] &newChar;*/
+
 	system("PAUSE");
 	Game game;
 	game.start();

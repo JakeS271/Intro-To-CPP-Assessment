@@ -23,21 +23,20 @@ void lockRoom::Update(MyString& command)
 	command.Lowercase();
 	for (int i = 0; i < m_itemCount; i++)
 	{
-		if (command.Find(itemList[i].itemName) && command.Find("examine"))
+		if (command.Find(itemList[i].itemName) >= 0 && command.Find("examine") >= 0)
+		{
+			itemList[i].descript.print();
+		}
+
+		else if (command.Find(directionList[i].direction) >= 0 && command.Find("go") >= 0)
 		{
 			if (command.Find("down") != 0)
 			{
-				itemList[i].descript.print();
+				location = directionList[i].location;
 				return;
 			}
 		}
-
-		else if (command.Find(directionList[i].direction) && command.Find("go"))
-		{
-			location = directionList[i].location;
-			return;
-		}
-		else if (command.Find(itemList[i].itemName) && command.Find("use") && itemList[i].locked == true && command.Find(itemList[i].itemUse) && Player::Inv.quantity == 1)
+		else if (command.Find(itemList[i].itemName) >= 0 && command.Find("use") >= 0 && itemList[i].locked == true && command.Find(itemList[i].itemUse) >= 0 && Player::Inv.quantity == 1)
 		{
 			for (int index = 0; index < m_directCount; i++)
 			{
