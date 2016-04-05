@@ -17,14 +17,12 @@ void puzzleRoom::puzzleAnswer(MyString& command)
 {
 	for (int i = 0; i < m_itemCount; i++)
 	{
-		if (command.Find(pItems[i].password))
+		if (command.Find(pItems[i].password) >= 0 && command.Find("enter") >= 0)
 		{
 			pItems[i].output.print();
-
-			player AddToInventory(pItems[i].item, 1);
-
-			Player::Inv.name = pItems[i].item;
-			Player::Inv.quantity = 1;
+			/*Player::p nv.name = pItems[i].item;
+			Player::Inv.quantity = 1;*/
+			break;
 		}
 	}
 }
@@ -46,12 +44,16 @@ void puzzleRoom::Update(MyString& command)
 			return;
 		}
 
-		else if (command.Find(directionList[i].direction) >= 0 && command.Find("go")>= 0)
+		else if (command.Find(directionList[i].direction) >= 0 && command.Find("go") >= 0)
 		{
 			location = directionList[i].location;
 			return;
 		}
-		puzzleAnswer(command);
+		else
+		{
+			puzzleAnswer(command);
+			return;
+		}
 	}
 
 	std::cout << "Error! Invalid input\n\n";

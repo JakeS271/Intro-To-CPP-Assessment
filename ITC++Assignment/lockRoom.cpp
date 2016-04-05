@@ -10,7 +10,7 @@ lockRoom::~lockRoom()
 {
 }
 
-Player::Inventory Player::Inv;
+//Player::Inventory Player::Inv;
 
 void lockRoom::setRoomItems(MyString iName, MyString description, MyString itemUse, bool locked)
 {
@@ -36,7 +36,7 @@ void lockRoom::Update(MyString& command)
 				return;
 			}
 		}
-		else if (command.Find(itemList[i].itemName) >= 0 && command.Find("use") >= 0 && itemList[i].locked == true && command.Find(itemList[i].itemUse) >= 0 && Player::Inv.quantity == 1)
+		else if (command.Find(itemList[i].itemName) >= 0 && command.Find("use") >= 0 && itemList[i].locked == true && command.Find(itemList[i].itemUse) >= 0 /*&& Player::Inv.quantity == 1*/)
 		{
 			for (int index = 0; index < m_directCount; i++)
 			{

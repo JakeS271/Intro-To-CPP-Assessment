@@ -1,5 +1,5 @@
 #include "endRoom.h"
-
+#include "Player.h"
 
 
 endRoom::endRoom()

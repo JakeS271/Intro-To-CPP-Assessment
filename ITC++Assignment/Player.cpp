@@ -17,8 +17,3 @@ Player::Player(int h, int d)
 Player::~Player()
 {
 }
-
-void Player::AddToInventory(MyString name, int quantity)
-{
-	Inv.push_back(Player::Inventory(name, quantity));
-}

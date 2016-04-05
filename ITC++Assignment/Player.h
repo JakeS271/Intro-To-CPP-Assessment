@@ -6,6 +6,8 @@
 class Player : public Character
 {
 protected:
+	int maxSpace = 5;
+
 	struct Inventory
 	{
 		MyString name;
@@ -19,8 +21,6 @@ public:
 	Player(int h, int d);
 	~Player();
 
-	void AddToInventory(MyString name, int quantity);
-
-	static std::vector<Inventory> Inv;	
+	static Inventory Inv[1];
 };
 
