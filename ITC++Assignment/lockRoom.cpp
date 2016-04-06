@@ -26,6 +26,7 @@ void lockRoom::Update(MyString& command)
 		if (command.Find(itemList[i].itemName) >= 0 && command.Find("examine") >= 0)
 		{
 			itemList[i].descript.print();
+			return;
 		}
 
 		else if (command.Find(directionList[i].direction) >= 0 && command.Find("go") >= 0)
@@ -36,7 +37,7 @@ void lockRoom::Update(MyString& command)
 				return;
 			}
 		}
-		else if (command.Find(itemList[i].itemName) >= 0 && command.Find("use") >= 0 && itemList[i].locked == true && command.Find(itemList[i].itemUse) >= 0 /*&& Player::Inv.quantity == 1*/)
+		else if (command.Find(itemList[i].itemName) >= 0 && command.Find("use") >= 0 && itemList[i].locked == true && command.Find(itemList[i].itemUse) >= 0 && hasKey == true)
 		{
 			for (int index = 0; index < m_directCount; i++)
 			{

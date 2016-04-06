@@ -30,7 +30,7 @@ void Game::start()
 {
 	MyString intro("\nWelcome to The Mansion.\nYou are trapped inside and must find a way out.\n\n"), command;
 	intro.print();
-	Player player;
+	static Player player;
 
 	Room m_studyR;
 	endRoom m_exitR;
@@ -42,7 +42,7 @@ void Game::start()
 	Room * m_puzzleP = &m_puzzleR;
 	Room * m_exitP = &m_exitR;
 
-	m_startR.roomDescrip("You are in the main foyer with a door to the EAST and the WEST\nThere is a locked trap door and paintings on the walls.\n\n");
+	m_startR.roomDescrip("You are in the main foyer with a door to the EAST and the WEST\nThere's a locked trap door in the center of the room and paintings on the walls.\n\n");
 	m_startR.setDirections("west", "studyR");
 	m_startR.setDirections("east", "puzzleR");
 	m_startR.setRoomItems("painting", "It's a painting of a boat.\n\n", " ", false);
@@ -72,7 +72,7 @@ void Game::start()
 	Room::location = "startR";
 	while (m_end != true)
 	{
-		m_end = true;
+		//m_end = true;
 		Location();
 	}
 
@@ -87,6 +87,10 @@ void Game::Location()
 	{
 		if (cLocation[i].roomName == Room::location)
 		{
+			if (Room::location == "puzzleR")
+			{
+				cLocation[i].roomPointers->Update(UserCommand());
+			}
 			cLocation[i].roomPointers->descriptPrint();
 			cLocation[i].roomPointers->Update(UserCommand());
 			break;

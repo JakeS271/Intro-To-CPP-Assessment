@@ -6,21 +6,15 @@
 class Player : public Character
 {
 protected:
-	int maxSpace = 5;
-
-	struct Inventory
-	{
-		MyString name;
-		int quantity;
-
-		Inventory(MyString n, int q) : name(n), quantity(q) {}
-	};
+	std::vector<MyString> inventory;
+	int itemLength = 1;
 
 public:
 	Player();
 	Player(int h, int d);
 	~Player();
 
-	static Inventory Inv[1];
+	bool HasItem(MyString& item);
+	void GiveItem(MyString& item);
 };
 

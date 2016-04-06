@@ -11,19 +11,14 @@ puzzleRoom::~puzzleRoom()
 {
 }
 
-//Player::Inventory Player::Inv;
+//static Player player;
 
 void puzzleRoom::puzzleAnswer(MyString& command)
 {
-	for (int i = 0; i < m_itemCount; i++)
+	if (command.Find(pItems[0].password) >= 0)
 	{
-		if (command.Find(pItems[i].password) >= 0 && command.Find("enter") >= 0)
-		{
-			pItems[i].output.print();
-			/*Player::p nv.name = pItems[i].item;
-			Player::Inv.quantity = 1;*/
-			break;
-		}
+		pItems[0].output.print();
+		GiveItem("key");
 	}
 }
 

@@ -3,7 +3,7 @@
 
 MyString::MyString()
 {
-	m_sLength = 1;
+	m_sLength = 256;
 	m_chars = new char[m_sLength];
 	m_chars[0] = '\0';
 }

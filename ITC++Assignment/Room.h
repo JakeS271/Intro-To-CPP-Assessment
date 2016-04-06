@@ -19,6 +19,7 @@ public:
 	static MyString location;
 
 protected:
+	int roomLength = 256;
 	MyString m_roomDescript;
 	char m_chars;
 
